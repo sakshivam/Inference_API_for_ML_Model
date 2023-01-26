@@ -1,0 +1,6 @@
+mlflow
+cloudpickle==2.2.0
+scikit-learn==0.23.2
+fastapi==0.89.1
+uvicorn==0.20.0
+pickle4==0.0.1
