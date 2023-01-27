@@ -1,0 +1,27 @@
+artifact_path: RFC
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.8.16
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 0.23.2
+mlflow_version: 2.0.1
+# model_uuid: 4e1d35bd8d8e4a399ee600c9237d5788
+# run_id: 4594e714c7de4cbda29efbd32037c8f7
+signature:
+  inputs: '[{"name": "passanger", "type": "long"}, {"name": "coupon", "type": "long"},
+    {"name": "CoffeeHouse", "type": "long"}, {"name": "destination", "type": "long"},
+    {"name": "expiration", "type": "long"}, {"name": "toCoupon_GEQ25min", "type":
+    "long"}, {"name": "Bar", "type": "long"}, {"name": "gender", "type": "long"},
+    {"name": "Restaurant20To50", "type": "long"}, {"name": "temperature", "type":
+    "long"}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+utc_time_created: '2023-01-12 13:01:59.833844'
