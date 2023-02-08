@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('continuous integration') {
+            steps {
+                cleanWs()
+                script {
+                    git branch: 'feature/multiplemodelsingleapi', url: 'https://github.com/sakshivam/Inference_API_for_ML_Model.git'
+                    sh 'docker build -t inferenceapi .'
+                }
+            }
+        }
+        stage('continuous deployment') {
+            steps {
+                    sh 'docker run -d -p 5001:5001 --name jenkinsapi inferenceapi'
+                    
+                }
+            }
+        stage('API run') {
+            steps {
+                    sh 'docker exec --tty jenkinsapi sh -c "uvicorn basic_app:api --host 0.0.0.0 --port 5001 --reload"'
+                    
+                }
+            }
+        
+
+        }
+}

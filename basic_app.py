@@ -19,7 +19,8 @@ def root():
   return {'message': 'Hello friends!'}
 
 # Loading in model from sklearn.load_model
-model = load_model(".\model")
+model = load_model("./singlemodel")
+
 
 # Creating the data model for data validation
 class Coupon(BaseModel):

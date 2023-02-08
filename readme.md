@@ -128,6 +128,7 @@ e.g running a shell script through command: bash script_name.sh
 or we can use single line command on the terminal to give input in json format to call API to predict data:
 
 curl -X POST http://localhost:5001/predict -d @data\test_data.json --header "Content-Type: application/json"
-
+<!-- curl -X POST http://localhost:5001/predict -d @data/test_data.json --header "Content-Type: application/json"
+curl http://inferenceapi:5001/predict  -->
 
 
